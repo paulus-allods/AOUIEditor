@@ -138,8 +138,10 @@ namespace AOUIEditor
             CalculatePosition(item.placement.X, parentPosition.X, parentPosition.X + parentSize.X, out posX, out sizeX);
             CalculatePosition(item.placement.Y, parentPosition.Y, parentPosition.Y + parentSize.Y, out posY, out sizeY);
 
-            float widthRatio = item.placement.X.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? 1 : width / virtualWidth;
-            float heightRatio = item.placement.Y.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? 1 : height / virtualHeight;
+            //float widthRatio = item.placement.X.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? 1 : width / virtualWidth;
+            //float heightRatio = item.placement.Y.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? 1 : height / virtualHeight;
+            float widthRatio = width / virtualWidth;
+            float heightRatio = height / virtualHeight;
 
             float realPosX = posX * widthRatio;
             float realPosY = posY * heightRatio;
@@ -251,8 +253,10 @@ namespace AOUIEditor
             {
                 for (int i = 0; i < item.children.Count; i++)
                 {
-                    float mulX = item.placement.X.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? virtualWidth / width : 1;
-                    float mulY = item.placement.Y.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? virtualHeight / height : 1;
+                    //float mulX = item.placement.X.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? virtualWidth / width : 1;
+                    //float mulY = item.placement.Y.Align == WidgetAlign.WIDGET_ALIGN_LOW_ABS ? virtualHeight / height : 1;
+                    float mulX = 1;
+                    float mulY = 1;
                     DrawItem(item.children[i], new Vector2(posX * mulX, posY * mulY), new Vector2(sizeX * mulX, sizeY * mulY));
                 }
             }
