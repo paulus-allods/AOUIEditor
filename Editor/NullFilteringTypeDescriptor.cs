@@ -26,15 +26,26 @@ namespace AOUIEditor
             foreach (PropertyDescriptor property in properties)
             {
                 object value = property.GetValue(instance);
-                if (value != null && NotNullObject(value))
+                if (value != null) // && NotNullObject(value))
                 {
-                    filteredProperties.Add(property);
+                    if (value is string)
+                    {
+                        if (!string.IsNullOrEmpty(value as string))
+                        {
+                            filteredProperties.Add(property);
+                        }
+                    }
+                    else
+                    {
+                        filteredProperties.Add(property);
+                    }
                 }
             }
 
             return filteredProperties;
         }
 
+        // It doesn't work well.. =(
         private bool NotNullObject(object obj)
         {
             if (!obj.GetType().IsClass)
