@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpDX.Direct3D9;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,9 @@ namespace AOUIEditor
     public partial class PropertiesForm : DockForm
     {
         private static PropertiesForm Instance;
+
+        public object currentObject;
+        public object currentWrapper;
 
         public PropertiesForm()
         {
@@ -38,12 +42,40 @@ namespace AOUIEditor
             Instance.propertyGrid1.Refresh();
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeState();
+        }
+
+        public void ChangeState()
+        {
+            if (checkBox1.Checked)
+            {
+                propertyGrid1.SelectedObject = currentWrapper;
+            }
+            else
+            {
+                propertyGrid1.SelectedObject = currentObject;
+            }
+        }
+
         public static object SelectedObject
         {
-            get { return Instance.propertyGrid1.SelectedObject; }
+            get { return Instance.currentObject; }
             set
             {
-                Instance.propertyGrid1.SelectedObject = value;
+                if (value != null)
+                {
+                    Instance.currentObject = value;
+                    Instance.currentWrapper = new NullFilteringObjectWrapper(value);
+                    Instance.ChangeState();
+                }
+                else
+                {
+                    Instance.currentObject = null;
+                    Instance.currentWrapper = null;
+                    Instance.propertyGrid1.SelectedObject = null;
+                }
                 if (value != null)
                 {
                     Instance.label1.Text = value.ToString();
