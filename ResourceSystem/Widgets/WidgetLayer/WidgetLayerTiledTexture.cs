@@ -31,6 +31,38 @@ namespace AOUIEditor.ResourceSystem
         {
             Layout = new WidgetLayerTiledLayout();
         }
+
+        protected override void Initialize()
+        {
+            base.Initialize();
+            if (Layout.MiddleX != 0)
+            {
+                if (!IsPowerOfTwo(Layout.MiddleX))
+                {
+                    Logger.Log($"MiddleX не равен степени 2 у текстуры {Path.Combine(directory, file)}");
+                }
+                else if (Layout.MiddleX < 32)
+                {
+                    Logger.Log($"MiddleX меньше 32 у текстуры {Path.Combine(directory, file)}");
+                }    
+            }
+            if (Layout.MiddleY != 0)
+            {
+                if (!IsPowerOfTwo(Layout.MiddleY))
+                {
+                    Logger.Log($"MiddleY не равен степени 2 у текстуры {Path.Combine(directory, file)}");
+                }
+                else if (Layout.MiddleY < 32)
+                {
+                    Logger.Log($"MiddleY меньше 32 у текстуры {Path.Combine(directory, file)}");
+                }
+            }
+        }
+
+        private bool IsPowerOfTwo(int x)
+        {
+            return (x & x - 1) == 0;
+        }
     }
 
     public enum WidgetLayerTiledLayoutType
