@@ -82,6 +82,9 @@ namespace AOUIEditor.ResourceSystem
         public UIRelatedSoundsGroup[] soundsGroups { get; set; }
 
         [Category("UIAddon")]
+        public UIRelatedWidgetsGroup[] widgetGroups { get; set; }
+
+        [Category("UIAddon")]
         [Editor(typeof(WidgetCssCollectionEditor), typeof(UITypeEditor))]
         public WidgetCss[] styleSheets { get; set; }
 

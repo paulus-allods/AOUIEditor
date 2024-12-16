@@ -28,6 +28,7 @@ namespace AOUIEditor.ResourceSystem
         UIRelatedTextures,
         UIRelatedSounds,
         UIRelatedDecalObjects,
+        UIRelatedWidgets,
         WidgetLayerSimpleTexture,
         WidgetLayerTiledTexture,
         WidgetLayerAnimatedTexture,

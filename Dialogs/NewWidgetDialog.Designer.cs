@@ -45,8 +45,9 @@
             System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("UIRelatedTexts");
             System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("UIRelatedTextures");
             System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("UIRelatedSounds");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("FMODProject");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("WidgetCss");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("UIRelatedWidgets");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("FMODProject");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("WidgetCss");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewWidgetDialog));
             widgetTypeTree = new System.Windows.Forms.TreeView();
             imageList1 = new System.Windows.Forms.ImageList(components);
@@ -132,11 +133,13 @@
             treeNode15.Text = "UIRelatedTextures";
             treeNode16.Name = "UIRelatedSounds";
             treeNode16.Text = "UIRelatedSounds";
-            treeNode17.Name = "FMODProject";
-            treeNode17.Text = "FMODProject";
-            treeNode18.Name = "WidgetCss";
-            treeNode18.Text = "WidgetCss";
-            widgetTypeTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] { treeNode1, treeNode2, treeNode3, treeNode4, treeNode5, treeNode6, treeNode7, treeNode8, treeNode9, treeNode10, treeNode11, treeNode12, treeNode13, treeNode14, treeNode15, treeNode16, treeNode17, treeNode18 });
+            treeNode17.Name = "UIRelatedWidgets";
+            treeNode17.Text = "UIRelatedWidgets";
+            treeNode18.Name = "FMODProject";
+            treeNode18.Text = "FMODProject";
+            treeNode19.Name = "WidgetCss";
+            treeNode19.Text = "WidgetCss";
+            widgetTypeTree.Nodes.AddRange(new System.Windows.Forms.TreeNode[] { treeNode1, treeNode2, treeNode3, treeNode4, treeNode5, treeNode6, treeNode7, treeNode8, treeNode9, treeNode10, treeNode11, treeNode12, treeNode13, treeNode14, treeNode15, treeNode16, treeNode17, treeNode18, treeNode19 });
             widgetTypeTree.SelectedImageIndex = 0;
             widgetTypeTree.Size = new System.Drawing.Size(247, 568);
             widgetTypeTree.TabIndex = 0;
@@ -165,7 +168,7 @@
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(78, 15);
+            label1.Size = new System.Drawing.Size(79, 15);
             label1.TabIndex = 110;
             label1.Text = "Тип виджета:";
             // 

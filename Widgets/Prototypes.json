@@ -838,6 +838,14 @@
       }
     ]
   },
+  "UIRelatedWidgets": {
+    "Prototypes": [
+      {
+        "Icon": "Icons\\Empty.png",
+        "Name": "Empty"
+      }
+    ]
+  },
   "FMODProject": {
     "Prototypes": [
       {
