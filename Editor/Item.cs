@@ -255,6 +255,19 @@ namespace AOUIEditor
                     return;
                 if (Project.IsolatedObject == null)
                 {
+                    if (addon.widgetGroups != null)
+                    {
+                        for (int i = 0; i < addon.widgetGroups.Length; i++)
+                        {
+                            if (addon.widgetGroups[i].widgets != null && addon.widgetGroups[i].widgets.items != null)
+                            {
+                                for (int j = 0; j < addon.widgetGroups[i].widgets.items.Length; j++)
+                                {
+                                    Add(parent, addon.widgetGroups[i].widgets.items[j].widget, false, true);
+                                }
+                            }
+                        }
+                    }
                     Add(parent, addon.Form, false, true);
                 }
                 else
